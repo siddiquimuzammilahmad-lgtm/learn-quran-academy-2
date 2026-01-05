@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Quran Academy</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#f4f6f5;
+}
+
+/* Header */
+header{
+    background:linear-gradient(to right,#0b6e4f,#0f9d58);
+    color:white;
+    text-align:center;
+    padding:30px 10px;
+}
+header h1{margin:0;font-size:28px;}
+header p{margin:5px 0;}
+
+/* Language Buttons */
+.lang button{
+    margin:5px;
+    padding:8px 12px;
+    border:none;
+    cursor:pointer;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    background:#222;
+}
+nav a{
+    color:white;
+    padding:12px;
+    text-decoration:none;
+}
+nav a:hover{background:#0b6e4f;}
+
+/* Sections */
+.section{
+    background:white;
+    margin:15px;
+    padding:20px;
+    border-radius:8px;
+}
+
+/* Inputs */
+input, select{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+}
+
+/* Buttons */
+button{
+    background:#0b6e4f;
+    color:white;
+    padding:10px;
+    border:none;
+    width:100%;
+    cursor:pointer;
+}
+button:hover{background:#095a40;}
+
+/* WhatsApp Floating */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
+    color:white;
+    font-size:28px;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    header h1{font-size:22px;}
+}
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1 id="title">Learn Quran Academy</h1>
+<p id="desc">Online Quran Education Worldwide</p>
+
+<div class="lang">
+<button onclick="setLang('en')">English</button>
+<button onclick="setLang('ur')">Urdu</button>
+<button onclick="setLang('ar')">Arabic</button>
+</div>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#admission">Admission</a>
+<a href="#login">Login</a>
+
+</nav>
+
+<!-- HOME -->
+<div id="home" class="section">
+<h2>📖 Courses</h2>
+<ul>
+<li>Noorani Qaida</li>
+<li>Quran with Tajweed</li>
+<li>Hifz Program</li>
+<li>Islamic Studies</li>
+</ul>
+</div>
+
+<!-- ADMISSION -->
+<div id="admission" class="section">
+<h2>📝 Online Admission</h2>
+
+<form onsubmit="sendWhatsApp(); return false;">
+<input id="name" placeholder="Student Name" required>
+<input id="age" placeholder="Age" required>
+<select id="course">
+<option>Noorani Qaida</option>
+<option>Quran with Tajweed</option>
+<option>Hifz</option>
+</select>
+<input id="phone" placeholder="WhatsApp Number" required>
+<button type="submit">Submit Admission</button>
+</form>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="section">
+<h2>👨‍🎓 Student Login (Demo)</h2>
+<input id="user" placeholder="Username">
+<input id="age" type="age" placeholder="age">
+<button onclick="login()">Login</button>
+</div>
+
+
+
+
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/918296052041" target="_blank" class="whatsapp">💬</a>
+
+<footer>
+<p>© 2026 Learn Quran Academy</p>
+</footer>
+
+<script>
+function sendWhatsApp(){
+    let name=document.getElementById("name").value;
+    let age=document.getElementById("age").value;
+    let course=document.getElementById("course").value;
+    let phone=document.getElementById("phone").value;
+
+    let msg = `New Admission:%0AName: ${name}%0AAge: ${age}%0ACourse: ${course}%0APhone: ${phone}`;
+
+    window.open(`https://wa.me/918296052041?text=${msg}`,'_blank');
+}
+
+function login(){
+    if(user.value==="student" && age.value==="any"){
+        alert("Login Successful (Demo)");
+    }else{
+        alert("Invalid Login");
+    }
+}
+
+function setLang(l){
+if(l==="en"){
+title.innerText="Learn Quran Academy";
+desc.innerText="Online Quran Education Worldwide";
+}
+if(l==="ur"){
+title.innerText="لرن قرآن اکیڈمی";
+desc.innerText="آن لائن قرآن تعلیم دنیا بھر میں";
+}
+if(l==="ar"){
+title.innerText="أكاديمية تعلم القرآن";
+desc.innerText="تعليم القرآن عبر الإنترنت";
+}
+}
+</script>
+
+</body>
+</html>
